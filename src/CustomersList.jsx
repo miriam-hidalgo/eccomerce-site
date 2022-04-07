@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-export default class MainContent extends Component {
+export default class CustomersList extends Component {
   state = {
     pageTitle: "Customers",
     customersCount: 5,
