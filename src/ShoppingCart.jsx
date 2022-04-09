@@ -23,14 +23,25 @@ export default class ShoppingCart extends Component {
             return (
               <Product
                 key={prod.id}
-                id={prod.id}
-                productName={prod.productName}
-                price={prod.price}
-              />
+                product={prod}
+                onIncrement={this.handleIncrement}
+                onDecrement={this.handleDecrement}
+              >
+                <button className="btn btn-primary">Buy Now</button>
+              </Product>
             );
           })}
         </div>
       </div>
     );
   }
+  // render ends here
+
+  handleIncrement = () => {
+    console.log("handleIncrement");
+  };
+
+  handleDecrement = () => {
+    console.log("handleDecrement");
+  };
 }
