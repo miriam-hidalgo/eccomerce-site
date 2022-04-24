@@ -1,9 +1,15 @@
 import React, { Component } from "react";
 
 export default class Product extends Component {
-  state = {
-    product: this.props.product,
-  };
+  constructor(props) {
+    super(props);
+
+    // console.log("Constructor - Product");
+
+    this.state = {
+      product: this.props.product,
+    };
+  }
 
   render() {
     return (
@@ -65,5 +71,10 @@ export default class Product extends Component {
         </div>
       </div>
     );
+  }
+
+  // Executes when the current instance of current component is being deleted from memory
+  componentWillUnmount() {
+    // console.log("componentWillUnmount - Product");
   }
 }

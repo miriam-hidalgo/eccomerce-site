@@ -3,7 +3,7 @@ import Product from "./Product";
 
 export default class ShoppingCart extends Component {
   constructor(props) {
-    console.log("constructor - ShoppingCart");
+    // console.log("constructor - ShoppingCart");
 
     super(props);
 
@@ -20,7 +20,7 @@ export default class ShoppingCart extends Component {
   }
 
   render() {
-    console.log("render - ShoppingCart");
+    // console.log("render - ShoppingCart");
 
     return (
       <div className="container-fluid">
@@ -46,9 +46,35 @@ export default class ShoppingCart extends Component {
   }
   // render ends here
 
+  // Executes after constructor and render method (includes life cycle of child components, if any) of current component
   componentDidMount = () => {
-    console.log("componentDidMount - ShoppingCart");
+    // console.log("componentDidMount - ShoppingCart");
   };
+
+  componentDidUpdate(prevProps, prevState) {
+    // console.log(
+    //   "componentDidUpdate - ShoppingCartk",
+    //   prevProps,
+    //   prevState,
+    //   this.props,
+    //   this.state
+    // );
+    // if (prevProps.x != this.props.x) {
+    //   // make http call
+    // }
+  }
+
+  // Executes when the current instance of current component is being deleted from memory
+  componentWillUnmount() {
+    // console.log("componentWillUnmount - ShoppingCart");
+  }
+
+  componentDidCatch(error, info) {
+    // console.log("componentDidCatch - ShoppingCart");
+    // console.log(error, info);
+
+    localStorage.lastError = `${error}\n${JSON.stringify(info)}`;
+  }
 
   // executes when user clicks on + button
   handleIncrement = (product, maxValue) => {
