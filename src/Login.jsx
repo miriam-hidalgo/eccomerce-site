@@ -53,7 +53,7 @@ export default class Login extends Component {
     console.log(this.state);
 
     var response = await fetch(
-      `http://localhost:5000/users?email=${this.state.email}&password=${this.state.password}`,
+      `https://json-server-back-end.herokuapp.com/users?email=${this.state.email}&password=${this.state.password}`,
       { method: "GET" }
     );
 

@@ -42,9 +42,15 @@ export default class ShoppingCart extends Component {
   // Executes after constructor and render method (includes life cycle of child components, if any) of current component
   componentDidMount = async () => {
     // Fetch data from data source
-    var response = await fetch("http://localhost:3001/products", {
-      method: "GET",
-    });
+    // var response = await fetch("http://localhost:3001/products", {
+    //   method: "GET",
+    // });
+    var response = await fetch(
+      "https://json-server-back-end.herokuapp.com/products",
+      {
+        method: "GET",
+      }
+    );
     var prods = await response.json();
     console.log(prods);
 
