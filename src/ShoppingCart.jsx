@@ -46,7 +46,7 @@ export default class ShoppingCart extends Component {
     //   method: "GET",
     // });
     var response = await fetch(
-      "https://json-server-back-end.herokuapp.com/products",
+      "https://ecommerce-backend-store.herokuapp.com/products",
       {
         method: "GET",
       }
